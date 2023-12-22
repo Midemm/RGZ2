@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск людей</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+</head>
+<header>
+    Колесников Дмитрий ФБИ-12
+</header>
+<body>
+    <h1>Поиск людей</h1>
+    <div class="result">
+        <form method="post" action="{{ url_for('search_results') }}">
+            <div class="textres">
+                <label for="name">Имя:</label>
+                <input type="text" name="name">
+            </div>
+            <br>
+            <div>
+                <label for="age">Возраст:</label>
+                <input type="number" name="age">
+            </div class="textres">
+            <br>
+            <div style="text-align: center;"></div>
+                <button type="submit">Поиск</button>
+            </div>
+        </form>
+    </div>
+    <h2></h2>
+</body>
+</html>

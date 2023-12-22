@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+</head>
+<header>
+    Колесников Дмитрий ФБИ-12
+</header>
+<body>
+    <h1>Результат поиска</h1>
+
+    <div class="result">
+        {% for result in results %}
+            <div class="textres">
+                <img src="{{ url_for('static', filename='photos/' + result.photo) }}" alt="User Photo" width="200">
+                <p>Имя: {{ result.username }}</p>
+                <p>Возраст: {{ result.age }}</p>
+                <p>Пол: {{ result.gender }}</p>
+                <p>Обо мне: {{ result.about_me }}</p>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

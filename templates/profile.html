@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш профиль</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+</head>
+<header>
+    Колесников Дмитрий ФБИ-12
+</header>
+<body>
+    <h1>Ваш профиль</h1>
+    <div class="result">
+        <img src="{{ url_for('static', filename='photos/' + user.photo) }}" alt="User Photo" width="200">
+        <p>Ваше имя: {{ user.username }}</p>
+        <p>Ваш возраст: {{ user.age }}</p>
+        <p>Ваш пол: {{ user.gender }}</p>
+        <p>Вы ишете: {{ user.search_gender }}</p>
+        <p>О Вас: {{ user.about_me }}</p>
+
+        <a class="ss" href="{{ url_for('edit_profile', user_id=user.id) }}">Редактировать профиль</a><br>
+        <a class="ss" href="{{ url_for('search') }}">Поиск людей</a><br>
+        <a class="ss" href="{{ url_for('delete_account') }}">Удалить аккаунт</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+</head>
+<header>
+    Колесников Дмитрий ФБИ-12
+</header>
+<body>
+    <h1>Регистрация</h1>
+    <form method="post" action="{{ url_for('register') }}">
+        <div class="result">
+            <div class="textres">
+                <label for="photo">Фото:</label>
+                <input type="file" name="photo" accept="image/*"><br>
+            <div class="textres">
+                <label for="username">Имя:</label>
+                <input type="text" name="username" required><br>
+            </div>
+            <div class="textres">
+                <label for="password">Пароль:</label>
+                <input type="password" name="password" required><br>
+            </div>
+            <div class="textres">
+                <label for="age">Возраст:</label>
+                <input type="number" name="age" required><br>
+            </div>
+            <div class="textres">
+                <label for="gender">Пол:</label>
+                <select name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br>
+            </div>
+            <div class="textres">
+                <label for="search_gender">Пол для поиска:</label>
+                <select name="search_gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br>
+            </div>
+            <div class="textres">
+                <label for="about_me">Обо мне:</label>
+                <textarea name="about_me"></textarea><br>
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+        </div>
+    </form>
+    <div class="textres">
+        <form method="GET" action="{{ url_for('login') }}">
+            <p style="margin: 0; margin-top: 20px; font-size: 12px;">Уже есть аккаунт? Войди здесь</p>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

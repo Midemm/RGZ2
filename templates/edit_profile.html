@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование профиля</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+</head>
+<header>
+    Колесников Дмитрий ФБИ-12
+</header>
+<body>
+    <h1>Редактирование профиля</h1>
+    
+    <form method="POST" action="{{ url_for('edit_profile') }}">
+        <div class="result">
+            <input type="hidden" name="user_id" value="{{ user.id }}">
+            <div class="textres">
+                <label for="photo">Фото:</label>
+                <input type="file" name="photo" accept="image/*">
+            </div>
+            <div class="textres">
+                <br>
+                <label for="username">Имя:</label>
+                <input type="text" name="username" value="{{ user.username }}" required>
+            </div>
+            <div class="textres">
+                <br>
+                <label for="age">Возраст:</label>
+                <input type="number" name="age" value="{{ user.age }}" required>
+            </div>
+            <div class="textres">
+                <br>
+                <label for="gender">Пол:</label>
+                <select name="gender" required>
+                    <option value="male" {% if user.gender == 'male' %} selected {% endif %}>Male</option>
+                    <option value="female" {% if user.gender == 'female' %} selected {% endif %}>Female</option>
+                </select>
+            </div>
+            <div class="textres">
+                <br>
+                <label for="search_gender">Пол для поиска:</label>
+                <select name="search_gender" required>
+                    <option value="male" {% if user.search_gender == 'male' %} selected {% endif %}>Male</option>
+                    <option value="female" {% if user.search_gender == 'female' %} selected {% endif %}>Female</option>
+                </select>
+            </div>
+            <div class="textres">
+                <br>
+                <label for="about_me">Обо мне:</label>
+                <textarea name="about_me" rows="4" cols="50">{{ user.about_me }}</textarea>
+            </div>
+            <div class="textres">
+                <br>
+                <label for="hidden">Вы находитесь в поиске?:</label>
+                <input type="checkbox" name="hidden" {% if user.hidden %}checked{% endif %}>
+            </div>
+            <div class="textres">
+                <br>
+                <input type="submit" value="Сохранить изменения">
+            </div> 
+        </div>
+    </form>
+</body>
+</html>

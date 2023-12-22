@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удаление аккаунта</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+</head>
+<header>
+    Колесников Дмитрий ФБИ-12
+</header>
+<body>
+    <h1>Удаление аккаунта</h1>
+    <div class="result">
+        <p>Вы действительно хотите удалить аккаунт?</p>
+
+        <form method="POST" action="{{ url_for('delete_account') }}">
+            <input type="submit" value="Удалить аккаунт">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(42, 49, 51);
+    color: rgb(206, 148, 148);
+    font-family: Arial;
+    margin: 0px;
+   
+}
+
+label{
+    margin-top: 100px;
+}
+
+.result{
+
+    margin-left: 42%;
+    margin-right: 42%;
+}
+
+.textres{
+    margin-top: 0px;
+}
+
+h1{
+    margin-top: 70px;
+    text-align: center;
+}
+
+.ss{
+    color: rgb(39, 150, 39);
+}
+
+.log{
+    font-size: 14px;
+    margin: 0;
+}
+
+
+header {
+    background:linear-gradient(to right, rgb(0, 0, 0), rgb(148, 50, 80));
+    color: black;
+    padding: 10px;
+    font-size: 20pt;
+    text-align: right;
+}

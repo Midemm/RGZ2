@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+</head>
+<header>
+    Колесников Дмитрий ФБИ-12
+</header>
+<body>
+    <h1>Авторизация</h1>
+    <form method="POST" action="{{ url_for('login') }}">
+        <div class="result">
+            <div style="text-align: right;">
+                <label for="username">Username:</label>
+                <input type="text" name="username" required>
+            </div>
+            <br>
+            <div style="text-align: right;">
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <input type="submit" value="Войти">
+            </div>  
+        </div>
+    </form>
+    <div class="result" style="text-align: right; margin-top: 20px;">
+        <form method="GET" action="{{ url_for('register') }}">
+            <p class="log">Нет аккаунта? Зарегестрируйся!</p>
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+    </div>
+</body>
+</html>
